@@ -2,13 +2,10 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>Recipe Library</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
-
-<P>  The time on the server is ${serverTime}. </P>
+<a href="/recipes">All recipes</a>
+<a href="recipes/add">Add new recipe</a>
 </body>
 </html>
