@@ -9,6 +9,6 @@
     <p> 'name: ' + ${recipe.name}" </p>
     <p> 'description: ' + ${recipe.description}" </p>
     <p> 'instructions: ' + ${recipe.instructions}" </p>
-    <a href="/recipes">Back to recipes</a>
+    <a href="recipes">Back to recipes</a>
 </body>
 </html>

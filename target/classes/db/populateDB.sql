@@ -1,0 +1,2 @@
+INSERT INTO recipes VALUES(1, 'Meatballs', 'Simple balls made from minced meat', 'Chop onion, mix egg, onion, meat etc.');
+INSERT INTO recipes VALUES(2, 'Coffee', 'Popular hot drink', 'Add water and ground coffee to coffee maker.');

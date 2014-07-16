@@ -5,7 +5,7 @@
 	<title>Recipe Library</title>
 </head>
 <body>
-<a href="/recipes">All recipes</a>
+<a href="recipes">All recipes</a>
 <a href="recipes/add">Add new recipe</a>
 </body>
 </html>

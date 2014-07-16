@@ -1,10 +1,23 @@
 package com.phuttunen.recipelibrary;
 
-public class Recipe {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Column;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+
+@Entity
+@Table(name = "recipes")
+public class Recipe extends BaseEntity {
+
+	@Column
+	@NotEmpty
 	private String name;
+	@Column
 	private String description;
 	
+	@Column
 	private String instructions;
 	
 	public String getName() {
