@@ -66,18 +66,6 @@
             <scope>runtime</scope>
         </dependency>
         
-        <!-- Dandelion -->
-        <dependency>
-            <groupId>com.github.dandelion</groupId>
-            <artifactId>datatables-jsp</artifactId>
-            <version>0.10.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.dandelion</groupId>
-            <artifactId>datatables-export-itext</artifactId>
-            <version>0.10.0</version>
-        </dependency>
-    		
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
