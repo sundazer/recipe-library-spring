@@ -6,6 +6,7 @@
 	<title>Add a recipe</title>
 </head>
 <body>
+<jsp:include page="../fragments/header.jsp" />
 	<div id="formsContent">
 		<h2>New recipe</h2>
 		<form:form id="form" method="post" modelAttribute="recipe">
@@ -32,5 +33,7 @@
 			<p><button type="submit">Submit</button></p>
 		</form:form>
 	</div>
+<jsp:include page="../fragments/footer.jsp" />
+
 </body>
 </html>

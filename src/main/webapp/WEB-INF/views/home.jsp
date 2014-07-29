@@ -5,7 +5,10 @@
 	<title>Recipe Library</title>
 </head>
 <body>
-<a href="recipes">All recipes</a>
-<a href="recipes/add">Add new recipe</a>
+<jsp:include page="../fragments/header.jsp" />
+<h1>Welcome to recipe library</h1>
+<p>Navigate the site by using the links at the top. You can browse all the recipes and add new ones.
+</p>
+<jsp:include page="../fragments/footer.jsp" />
 </body>
 </html>

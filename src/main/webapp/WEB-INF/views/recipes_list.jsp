@@ -7,6 +7,7 @@
 
 <html>
 <body>
+<jsp:include page="../fragments/header.jsp" />
 <div class="container">
     <h2>Recipes</h2>
     <table>
@@ -20,7 +21,8 @@
 	</table>
 </div>
 
-<a href="${pageContext.request.contextPath}">Back to main</a>
+<jsp:include page="../fragments/footer.jsp" />
+
 </body>
 
 </html>
