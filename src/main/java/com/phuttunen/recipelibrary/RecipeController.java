@@ -32,15 +32,13 @@ public class RecipeController {
     public String greetingSubmit(@ModelAttribute Recipe recipe, Model model) {
         model.addAttribute("recipe", recipe);
         this.recipeService.saveRecipe(recipe);
-        return listRecipes(model);
+        return "redirect:/recipes";
     }
     
     @RequestMapping(value="/recipes")
     public String listRecipes(Model model) {
     	Collection<Recipe> recipes = new ArrayList<Recipe>();
     	recipes.addAll(this.recipeService.getAllRecipes());
-    	/*Recipes recipes = new Recipes();
-    	recipes.getRecipeList().addAll(this.recipeService.getAllRecipes());*/
     	model.addAttribute("recipes", recipes);
     	return "recipes_list";
     }

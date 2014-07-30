@@ -7,21 +7,27 @@
 
 <html>
 <body>
-<jsp:include page="../fragments/header.jsp" />
 <div class="container">
+
+<jsp:include page="../fragments/header.jsp" />
+
     <h2>Recipes</h2>
-    <table>
+    <table class="table table-striped table-bordered table-condensed">
     <c:forEach var="recipe" items="${recipes}">
     	<tr>
     		<td><c:out value="${recipe.name}" /></td>
     		<td><c:out value="${recipe.description}" /></td>
-    		<td><c:out value="${recipe.instructions}" /></td>
+    		<td>
+    		<c:out value="${fn:length(recipe.instructions) > 140 ? fn:substring(recipe.instructions, 0, 140) : recipe.instructions }" />
+    		<c:if test="${fn:length(recipe.instructions) > 140 }">
+    			<td><c:out value="${fn:substring(recipe.instructions, 0, 140)} ..." /></td>
+    		</c:if></td>
     	</tr>
     </c:forEach>
 	</table>
-</div>
-
 <jsp:include page="../fragments/footer.jsp" />
+
+</div>
 
 </body>
 

@@ -6,34 +6,46 @@
 	<title>Add a recipe</title>
 </head>
 <body>
+<div class="container">
+
 <jsp:include page="../fragments/header.jsp" />
+
 	<div id="formsContent">
-		<h2>New recipe</h2>
-		<form:form id="form" method="post" modelAttribute="recipe">
+		<form:form class="form-horizontal" role="form" id="form" method="post" modelAttribute="recipe">
 			<div class="header">
-		  		<h2>Form</h2>
+		  		<h2>Add a new recipe...</h2>
 			</div>
 		  	<fieldset>
+		  	<div class="form-group">
 		  		<form:label path="name">
 		  			Name <form:errors path="name" />
 		 		</form:label>
-		  		<form:input path="name" />
+		  		<form:input type="text" class="form-control" path="name" />
+			</div>
 	
+		  	<div class="form-group">
 		  		<form:label path="description">
 		  			Description
 		  		</form:label>
-		  		<form:textarea path="description" />
-
+		  		<form:textarea class="form-control" rows="1" path="description" />
+			</div>
+	
+		  	<div class="form-group">
 		  		<form:label path="instructions">
 		  			Instructions
 		  		</form:label>
-		  		<form:textarea path="instructions" />
+		  		<form:textarea class="form-control" rows="3" path="instructions" />
+		  	</div>
+	
 		  	</fieldset>
 	
 			<p><button type="submit">Submit</button></p>
 		</form:form>
 	</div>
+
 <jsp:include page="../fragments/footer.jsp" />
 
+
+</div>
 </body>
 </html>
