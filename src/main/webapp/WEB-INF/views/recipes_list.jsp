@@ -15,7 +15,12 @@
     <table class="table table-striped table-bordered table-condensed">
     <c:forEach var="recipe" items="${recipes}">
     	<tr>
-    		<td><c:out value="${recipe.name}" /></td>
+    		<td>
+				<spring:url value="/recipes/{recipeId}.html" var="recipeURL">
+                	<spring:param name="recipeId" value="${recipe.id}"/>
+	            </spring:url>
+    			<a href="${recipeURL}"><c:out value="${recipe.name}" /></a>
+    		</td>
     		<td><c:out value="${recipe.description}" /></td>
     		<td>
     		<c:out value="${fn:length(recipe.instructions) > 140 ? fn:substring(recipe.instructions, 0, 140) : recipe.instructions }" />

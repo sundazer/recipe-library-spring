@@ -10,10 +10,12 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.ParameterizedBeanPropertyRowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -53,6 +55,23 @@ public class JdbcRecipeRepository implements RecipeRepository {
                 ParameterizedBeanPropertyRowMapper.newInstance(Recipe.class)));
 		
 		return recipes;
+	}
+
+	@Override
+	public Recipe findById(int recipeId) throws DataAccessException {
+        Recipe recipe;
+        try {
+            Map<String, Object> params = new HashMap<String, Object>();
+            params.put("id", recipeId);
+            recipe = this.namedParamJdbcTemplate.queryForObject(
+                    "SELECT id, name, description, instructions FROM recipes WHERE id= :id",
+                    params,
+                    ParameterizedBeanPropertyRowMapper.newInstance(Recipe.class)
+            );
+        } catch (EmptyResultDataAccessException ex) {
+            throw new ObjectRetrievalFailureException(Recipe.class, recipeId);
+        }
+        return recipe;
 	}
 	
 }

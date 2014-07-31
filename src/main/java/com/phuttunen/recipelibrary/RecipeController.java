@@ -2,14 +2,15 @@ package com.phuttunen.recipelibrary;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(value="/recipes")
@@ -41,5 +42,12 @@ public class RecipeController {
     	recipes.addAll(this.recipeService.getAllRecipes());
     	model.addAttribute("recipes", recipes);
     	return "recipes_list";
+    }
+    
+    @RequestMapping("/{recipeId}")
+    public ModelAndView showOwner(@PathVariable("recipeId") int recipeId) {
+        ModelAndView mav = new ModelAndView("/recipe_details");
+        mav.addObject(this.recipeService.findRecipeById(recipeId));
+        return mav;
     }
 }

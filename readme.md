@@ -3,7 +3,7 @@ Recipe Library in Spring
 
 Web service for collecting food recipes.
 
-Coded in Java, using Spring.
+Coded in Java, using Spring. Huge thanks to [Spring Petclinic](https://github.com/spring-projects/spring-petclinic/)
 
 Usage
 -

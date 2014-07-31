@@ -7,4 +7,5 @@ import org.springframework.dao.DataAccessException;
 public interface RecipeService {
 	Collection<Recipe> getAllRecipes() throws DataAccessException;
 	void saveRecipe(Recipe recipe) throws DataAccessException;
+	Recipe findRecipeById(int recipeId) throws DataAccessException;
 }

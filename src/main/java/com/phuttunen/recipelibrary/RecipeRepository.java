@@ -8,4 +8,5 @@ public interface RecipeRepository {
 
 	Collection<Recipe> findAll() throws DataAccessException;
 	void save(Recipe recipe) throws DataAccessException;
+	Recipe findById(int recipeId) throws DataAccessException;
 }

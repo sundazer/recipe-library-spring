@@ -29,4 +29,10 @@ public class RecipeLibraryService implements RecipeService {
 		return recipeRepository.findAll();
 	}
 
+	@Override
+	@Transactional(readOnly = true)
+	public Recipe findRecipeById(int recipeId) throws DataAccessException {
+		return recipeRepository.findById(recipeId);
+	}
+
 }
